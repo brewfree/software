@@ -167,6 +167,10 @@ section {
     padding: 140px 0 110px;
 }
 
+.section-title {
+    color: #F0B746;
+}
+
 @media(max-width:768px) {
     section {
         padding: 100px 0 80px;
@@ -283,6 +287,7 @@ a.fa {
 
 .logo {
     display: none;
+    color: #F0B746;
 }
 
 .navbar-custom.top-nav-collapse .navbar-brand .logo {
@@ -336,7 +341,7 @@ a.fa {
 }
 
     .navbar-custom .nav li.active a {
-        color: #FFFEAF;
+        color: #F0B746;
     }
 
         .navbar-custom .nav li.active a:hover {
@@ -511,27 +516,51 @@ a.fa {
     }
 }
 
+.icon-logo {
+    color: #fff;
+    padding-right: 10px;
+}
+
+/* Mission */
+.mission {
+    background-color: #1b1f23;
+}
+
+.mission-label {
+    color: #F0B746;
+}
+
+.mission,
+.mission a {
+    color: #fff;
+}
+
+    .mission a:hover {
+        color: #888;
+    }
+
+/* Approach */
+.approach-label {
+    /*color: #1080f2;*/
+    color: #F0B746;
+}
+
 /* Action */
 .action {
     background-color: #fff;
 }
 
-.action2 {
-    background-color: #1b1f23;
-}
+
 
 .action3 {
     background: rgba(0, 0, 0, 0.5);
 }
 
-    .action2,
-    .action2 a,
     .action3,
     .action3 a {
         color: #fff;
     }
 
-        .action2 a:hover,
         .action3 a:hover {
             color: #888;
         }
@@ -553,13 +582,13 @@ a.fa {
         padding-bottom: 15px;
     }
 
-/* services */
+/* Approach */
 
-#services {
+#approach {
     background: #fff;
 }
 
-    #services .icon {
+    #approach .icon {
         font-size: 80px;
         display: block;
         padding-bottom: 15px;
