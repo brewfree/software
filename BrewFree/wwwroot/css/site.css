@@ -130,7 +130,7 @@ p {
 }
 
 a {
-    text-decoration: underline;
+    text-decoration: none;
     color: #000;
     -webkit-transition: all .3s ease-in-out;
     -moz-transition: all .3s ease-in-out;
@@ -531,10 +531,15 @@ a.fa {
         color: #888;
     }
 
-/* Action */
-.action {
-    background-color: #fff;
+/* Contribute */
+#contribute {
+    background: rgba(0, 0, 0, 0.8);
 }
+    #contribute,
+    #contribute a,
+    #contribute a:hover {
+        color: #fff;
+    }
 
 /* About */
 #about {
@@ -617,17 +622,6 @@ a.fa {
     }
 }
 
-/* Sponsors */
-#sponsor {
-    background: rgba(0, 0, 0, 0.8);
-}
-
-.sponsor img {
-    max-width: 170px;
-    max-height: 100px;
-    vertical-align: middle;
-}
-
 /* Team */
 #team {
     background: #fff;
@@ -648,11 +642,6 @@ a.fa {
     #team h2 {
         margin-bottom: 55px;
     }
-
-/* Contact */
-#contact {
-    background: #fff;
-}
 
 /* Footer */
 #footer {
