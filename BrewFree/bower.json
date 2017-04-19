@@ -5,6 +5,16 @@
     "bootstrap": "3.3.7",
     "jquery": "2.2.0",
     "jquery-validation": "1.14.0",
-    "jquery-validation-unobtrusive": "3.2.6"
+    "jquery-validation-unobtrusive": "3.2.6",
+    "font-awesome": "Font-Awesome#v4.7.0",
+    "Ionicons": "ionicons#v2.0.1",
+    "animate.css": "animate-css#v3.1.0",
+    "vegas": "v2.4.0",
+    "jquery.easing": "jquery-easing-original#v1.4.0",
+    "jquery.countdown": "2.2.0",
+    "device.js": "0.0.3",
+    "wow": "WOW#1.1.2",
+    "smoothscroll-for-websites": "v1.4.6",
+    "jquery-placeholder": "v2.3.1"
   }
 }

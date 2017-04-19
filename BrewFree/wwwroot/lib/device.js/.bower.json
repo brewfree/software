@@ -1,0 +1,31 @@
+{
+  "name": "device.js",
+  "description": "",
+  "version": "0.0.3",
+  "homepage": "http://",
+  "author": {
+    "name": "Javi Jimenez Villar",
+    "site": "http://twitter.com/soyjavi"
+  },
+  "main": [
+    "./device.js"
+  ],
+  "keywords": [
+    "mobile"
+  ],
+  "license": [
+    {
+      "type": "MIT"
+    }
+  ],
+  "_release": "0.0.3",
+  "_resolution": {
+    "type": "version",
+    "tag": "0.0.3",
+    "commit": "ac6882b331c64fb50874c8878a1428e2735d9edd"
+  },
+  "_source": "https://github.com/soyjavi/package-device.js.git",
+  "_target": "0.0.3",
+  "_originalSource": "device.js",
+  "_direct": true
+}
