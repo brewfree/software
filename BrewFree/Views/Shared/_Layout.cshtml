@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>BREW FREE - @ViewData["Title"]</title>
 
-    <environment names="Development">
+    <environment names="Development,Staging,Production">
         
         <!-- Bootstrap Core CSS -->
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css"/>
@@ -30,7 +30,7 @@
         <![endif]-->
 
     </environment>
-    <environment names="Staging,Production">
+    <environment names="None">
         
         <!-- Bootstrap Core CSS -->
         <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/css/bootstrap.min.css"
@@ -63,7 +63,7 @@
 
 @RenderBody()
 
-<environment names="Development">
+<environment names="Development,Staging,Production">
     
     <!-- jQuery -->
     <script src="~/lib/jquery/dist/jquery.js"></script>
@@ -72,7 +72,7 @@
     <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
 
 </environment>
-<environment names="Staging,Production">    
+<environment names="None">    
     
     <!-- jQuery -->
     <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-2.2.0.min.js"

@@ -153,7 +153,7 @@
                 It feels good to give back!  Here's how you can help:
             </p>
             <div class="col-lg-4 col-md-4">
-                <a href="/" target="_blank" title="Donate"><i class="fa fa-paypal fa-fw fa-2x"></i> Donate</a>
+                <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=support%40brewfree%2eorg&lc=US&item_name=Brew%20Free&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donate_SM%2egif%3aNonHosted" target="_blank" title="Donate"><i class="fa fa-paypal fa-fw fa-2x"></i> Donate</a>
             </div>
             <div class="col-lg-4 col-md-4">
                 <a href="/" target="_blank" title="Develop"><i class="fa fa-github fa-fw fa-2x"></i> Develop</a>
@@ -220,7 +220,7 @@
 
 @section Scripts {
     
-    <environment names="Development">
+    <environment names="Development,Staging,Production">
         
         <!-- Plugin JavaScript -->
         <script src="~/lib/jquery.easing/jquery.easing.js"></script>
@@ -235,7 +235,7 @@
         
         <script src="~/js/home.js" asp-append-version="true"></script>
     </environment>
-    <environment names="Staging,Production">
+    <environment names="None">
         
         <!-- Plugin JavaScript -->
         <script src="~/lib/jquery.easing/jquery.easing.min.js"></script>
