@@ -15,8 +15,9 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800"/>
         <link rel="stylesheet" href="~/lib/font-awesome/css/font-awesome.css"/>
         <link rel="stylesheet" href="~/lib/ionicons/css/ionicons.css"/>
+        
+        <!-- Slider animation -->
         <link rel="stylesheet" href="~/lib/animate.css/animate.css"/>
-
         <link rel="stylesheet" href="~/lib/vegas/dist/vegas.css" />
 
         <!-- Custom CSS -->
@@ -41,8 +42,9 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800"/>
         <link rel="stylesheet" href="~/lib/font-awesome/css/font-awesome.min.css"/>
         <link rel="stylesheet" href="~/lib/ionicons/css/ionicons.min.css"/>
-        <link rel="stylesheet" href="~/lib/animate.css/animate.min.css"/>
         
+        <!-- Slider animation -->
+        <link rel="stylesheet" href="~/lib/animate.css/animate.min.css"/>
         <link rel="stylesheet" href="~/lib/vegas/dist/vegas.min.css" />
 
         <!-- Custom CSS -->
@@ -63,7 +65,7 @@
 
 @RenderBody()
 
-<environment names="Development,Staging,Production">
+<environment names="Development">
     
     <!-- jQuery -->
     <script src="~/lib/jquery/dist/jquery.js"></script>
@@ -72,7 +74,7 @@
     <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
 
 </environment>
-<environment names="None">    
+<environment names="Staging,Production">    
     
     <!-- jQuery -->
     <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-2.2.0.min.js"
