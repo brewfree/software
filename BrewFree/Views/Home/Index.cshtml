@@ -16,7 +16,7 @@
             </button>
             <a class="navbar-brand page-scroll wow fadeInRight" data-wow-duration="1s" data-wow-delay="1.4s" href="#page-top">
                 <i class="icon icon-logo ion-ios-pint"></i><span class="logo">BREW FREE</span>
-            </a>
+</a>
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
@@ -26,23 +26,24 @@
                     <a href="#page-top"></a>
                 </li>
                 <li>
-                    <a class="page-scroll" href="#page-top">HOME</a>
+                    <a class="page-scroll" title="Home" href="#page-top">HOME</a>
                 </li>
                 <li>
-                    <a class="page-scroll" href="#mission">MISSION</a>
+                    <a class="page-scroll" title="Mission" href="#mission">MISSION</a>
                 </li>
                 <li>
-                    <a class="page-scroll" href="#approach">APPROACH</a>
+                    <a class="page-scroll" title="Approach" href="#approach">APPROACH</a>
                 </li>
                 <li>
-                    <a class="page-scroll" href="#features">FEATURES</a>
+                    <a class="page-scroll" title="Contribute" href="#contribute">CONTRIBUTE</a>
                 </li>
                 <li>
-                    <a class="page-scroll" href="#contribute">CONTRIBUTE</a>
+                    <a class="page-scroll" title="Planned Features" href="#features">FEATURES</a>
                 </li>
                 <li>
-                    <a class="page-scroll" href="#team">TEAM</a>
+                    <a class="page-scroll" href="#about">ABOUT</a>
                 </li>
+                @await Html.PartialAsync("_LoginPartial")
             </ul>
         </div>
     </div>
@@ -52,7 +53,7 @@
 <header class="intro">
     <div class="intro-body">
         <div id="clock" class="wow fadeIn" data-wow-duration="6s" data-wow-delay=".6s"></div>
-        <p class="intro-text wow fadeIn" data-wow-duration="7s" data-wow-delay=".7s">COMING FALL 2017.  IN THE MEANTIME, KEEP BREWING.</p>
+        <p class="intro-text wow fadeIn" data-wow-duration="7s" data-wow-delay=".7s">COMING FALL 2017<br/>IN THE MEANTIME, KEEP BREWING</p>
         <ul class="list-inline lead">
             <li><a href="#mission" class="btn btn-border btn-lg page-scroll wow fadeInLeft" data-wow-duration="1s" data-wow-delay="1.4s"><i class="fa fa-chevron-down"></i> MISSION</a></li>
             <li><a href="#contribute" class="btn btn-white btn-lg page-scroll wow fadeInRight" data-wow-duration="1s" data-wow-delay="1.4s"><i class="fa fa-chevron-down"></i> CONTRIBUTE</a></li>
@@ -97,12 +98,23 @@
     </div>
 </section>
 
-<!-- Who we are -->
-<section id="about" class="container-fluid text-center wow fadeIn">
+<!-- Contribute -->
+<section id="contribute" class="container-fluid text-center wow fadeIn">
     <div class="row">
         <div class="col-lg-8 col-lg-offset-2">
-            <h2 class="section-title">WHO WE ARE</h2>
-            <p>We are software developers and home brewers who are just as passionate about brewing as we are about coding.  We also like to tinker and build and customize things.  Sometimes we just take things apart to see how they work.</p>
+            <h2 class="section-title">CONTRIBUTE</h2>
+            <p>
+                It feels good to give back!  Here's how you can help:
+            </p>
+            <div class="col-lg-4 col-md-4">
+                <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=support%40brewfree%2eorg&lc=US&item_name=Brew%20Free&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donate_SM%2egif%3aNonHosted" target="_blank" title="Donate"><i class="fa fa-paypal fa-fw fa-2x"></i> Donate</a>
+            </div>
+            <div class="col-lg-4 col-md-4">
+                <a href="https://github.com/brewfree/software" target="_blank" title="Develop"><i class="fa fa-github fa-fw fa-2x"></i> Develop</a>
+            </div>
+            <div class="col-lg-4 col-md-4">
+                <a href="mailto:support@brewfree.org?subject=Beta%20Test" target="_blank" title="Beta Test"><i class="fa fa-bug fa-fw fa-2x"></i> Beta Test</a>
+            </div>
         </div>
     </div>
 </section>
@@ -144,23 +156,12 @@
     </div>
 </section>
 
-<!-- Contribute -->
-<section id="contribute" class="container-fluid text-center wow fadeIn">
+<!-- Who we are -->
+<section id="about" class="container-fluid text-center wow fadeIn">
     <div class="row">
         <div class="col-lg-8 col-lg-offset-2">
-            <h2 class="section-title">CONTRIBUTE</h2>
-            <p>
-                It feels good to give back!  Here's how you can help:
-            </p>
-            <div class="col-lg-4 col-md-4">
-                <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=support%40brewfree%2eorg&lc=US&item_name=Brew%20Free&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donate_SM%2egif%3aNonHosted" target="_blank" title="Donate"><i class="fa fa-paypal fa-fw fa-2x"></i> Donate</a>
-            </div>
-            <div class="col-lg-4 col-md-4">
-                <a href="https://github.com/brewfree/software" target="_blank" title="Develop"><i class="fa fa-github fa-fw fa-2x"></i> Develop</a>
-            </div>
-            <div class="col-lg-4 col-md-4">
-                <a href="mailto:support@brewfree.org?subject=Beta%20Test" target="_blank" title="Beta Test"><i class="fa fa-bug fa-fw fa-2x"></i> Beta Test</a>
-            </div>
+            <h2 class="section-title">WHO WE ARE</h2>
+            <p>We are software developers and home brewers who are just as passionate about brewing as we are about coding.  We also like to tinker and build and customize things.  Sometimes we just take things apart to see how they work.</p>
         </div>
     </div>
 </section>
@@ -191,8 +192,8 @@
             <i class="icon icon-footer ion-ios-pint"></i>
         </div>
         <div class="col-md-6">
-            <p><i class="icon ion-android-mail"></i> <a href="mailto:support@brewfree.org">support@brewfree.org</a><br />
-            &copy; BREW FREE @DateTime.Today.Year.ToString()</p>
+            <p><i class="icon ion-android-mail"></i> <a href="mailto:support@brewfree.org">support@brewfree.org</a><br/>
+                &copy; BREW FREE @DateTime.Today.Year.ToString()</p>
         </div>
         <div class="col-md-3">
             <ul class="list-inline">
@@ -208,7 +209,7 @@
 
 @section Scripts {
     
-    <environment names="Development,Staging,Production">
+    <environment names="Development">
         
         <!-- Plugin JavaScript -->
         <script src="~/lib/jquery.easing/jquery.easing.js"></script>
@@ -221,9 +222,9 @@
         <!-- Background Slider -->
         <script src="~/lib/vegas/dist/vegas.js"></script>
         
-        <script src="~/js/home.js" asp-append-version="true"></script>
+        <script src="~/js/home.min.js" asp-append-version="true"></script>
     </environment>
-    <environment names="None">
+    <environment names="Staging,Production">
         
         <!-- Plugin JavaScript -->
         <script src="~/lib/jquery.easing/jquery.easing.min.js"></script>
@@ -231,7 +232,7 @@
         <script src="~/lib/device.js/device.js"></script>
         <script src="~/lib/wow/dist/wow.min.js"></script>
         <script src="~/lib/smoothscroll-for-websites/SmoothScroll.js"></script>
-        <script src="~/lib/jquery-placeholder/jquery.placeholder.js"></script>
+        <script src="~/lib/jquery-placeholder/jquery.placeholder.min.js"></script>
 
         <!-- Background Slider -->
         <script src="~/lib/vegas/dist/vegas.min.js"></script>
