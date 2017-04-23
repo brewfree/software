@@ -86,6 +86,12 @@ namespace BrewFree
                 ClientSecret = Configuration["Authentication:Google:ClientSecret"]
             });
 
+            app.UseMicrosoftAccountAuthentication(new MicrosoftAccountOptions
+            {
+                ClientId = Configuration["Authentication:Microsoft:ClientId"],
+                ClientSecret = Configuration["Authentication:Microsoft:ClientSecret"]
+            });
+
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
