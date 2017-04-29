@@ -1,9 +1,18 @@
 ﻿@inject Microsoft.ApplicationInsights.AspNetCore.JavaScriptSnippet JavaScriptSnippet
+@using BrewFree.Common
+
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta property="fb:app_id" content="2090451257848144" />
+    <meta property="og:url" content="@Url.AbsoluteContent("~/")" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="BREW FREE - ENABLING EVERY HOME BREWER ON THE PLANET TO BREW BETTER" />
+    <meta property="og:description" content="Open-source cloud-based home brewing software developed and supported by a community that enables the free exchange of home brewing tools and knowledge." />
+    <meta property="og:image" content="@Url.AbsoluteContent("~/")images/brewfree-fb.png" />
+
     <title>BREW FREE - @ViewData["Title"]</title>
 
     <environment names="Development">
@@ -58,6 +67,7 @@
         <![endif]-->
 
     </environment>
+    @RenderSection("AdditionalPageHead", required: false)
     @Html.Raw(JavaScriptSnippet.FullScript)
 </head>
 

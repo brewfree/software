@@ -284,13 +284,18 @@ a.fa {
         font-size: 18px;
     }
 
-.logo {
-    display: none;
-    color: #F0B746;
+.logo-image {
+    height:40px;
+    display: inline !important;
 }
 
-.navbar-custom.top-nav-collapse .navbar-brand .logo {
-    display: inline-block;
+.logo-text {
+    display: none;
+    color: #FFF;
+}
+
+.navbar-custom.top-nav-collapse .navbar-brand .logo-text {
+    display: inline;
 }
 
 .navbar-custom .navbar-brand:focus {
@@ -323,6 +328,7 @@ a.fa {
     letter-spacing: 0.15em;
     text-transform: uppercase;
     text-decoration: none;
+    padding-top: 7px;
 }
 
 .navbar-custom .nav li a {

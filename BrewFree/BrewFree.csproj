@@ -14,6 +14,8 @@
     <Content Include="wwwroot\images\0.jpg" />
     <Content Include="wwwroot\images\1.jpg" />
     <Content Include="wwwroot\images\2.jpg" />
+    <Content Include="wwwroot\images\brewfree-sm-white.png" />
+    <Content Include="wwwroot\images\brewfree-sm.png" />
     <Content Include="wwwroot\images\john.jpg" />
     <Content Include="wwwroot\images\tyler.jpg" />
     <Content Include="wwwroot\js\home.js" />
