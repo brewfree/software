@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
-namespace BrewFree.Models.AccountViewModels
+namespace BrewFree.ViewModels.AccountViewModels
 {
     public class SendCodeViewModel
     {

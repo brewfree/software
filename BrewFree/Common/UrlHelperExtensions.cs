@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using System;
 
 namespace BrewFree.Common
@@ -19,8 +18,8 @@ namespace BrewFree.Common
             this IUrlHelper url,
             string contentPath)
         {
-            HttpRequest request = url.ActionContext.HttpContext.Request;
-            return new Uri(new Uri($"{request.Scheme}://{request.Host.Value}{(request.Host.Port == 80 ? string.Empty : ":" + request.Host.Port)}"), url.Content(contentPath)).ToString();
+            var request = url.ActionContext.HttpContext.Request;
+            return new Uri(new Uri($"{request.Scheme}://{request.Host.Value}"), url.Content(contentPath)).ToString();
         }
 
         public static string AbsoluteRouteUrl(

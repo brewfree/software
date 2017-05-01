@@ -10,8 +10,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
-using BrewFree.Models;
-using BrewFree.Models.AccountViewModels;
+using BrewFree.ViewModels;
+using BrewFree.ViewModels.AccountViewModels;
 using BrewFree.Services;
 
 namespace BrewFree.Controllers

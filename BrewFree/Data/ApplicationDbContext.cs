@@ -1,4 +1,5 @@
 ﻿using BrewFree.Data.Models;
+using BrewFree.Data.Models.Lookups;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
@@ -10,6 +11,12 @@ namespace BrewFree.Data
             : base(options)
         {
         }
+        
+        public DbSet<Recipe> Recipes { get; set; }
+
+        public DbSet<Brewer> Brewers { get; set; }
+
+        public DbSet<BrewType> BrewTypes { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {

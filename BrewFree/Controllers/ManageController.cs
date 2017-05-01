@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
 using System.Threading.Tasks;
 using BrewFree.Data.Models;
 using Microsoft.AspNetCore.Authorization;
@@ -8,9 +6,8 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
-using BrewFree.Models;
-using BrewFree.Models.ManageViewModels;
 using BrewFree.Services;
+using BrewFree.ViewModels.ManageViewModels;
 
 namespace BrewFree.Controllers
 {
