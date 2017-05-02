@@ -102,7 +102,7 @@ namespace BrewFree
 
             if (env.IsDevelopment())
             {
-                ApplicationDbInitializer.Initialize(dbContext);
+                ApplicationDbContextConfig.Initialize(dbContext);
             }
         }
     }

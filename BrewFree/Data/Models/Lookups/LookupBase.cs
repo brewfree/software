@@ -3,15 +3,17 @@ using BrewFree.Data.Constants;
 
 namespace BrewFree.Data.Models.Lookups
 {
-    public class BrewType
+    public abstract class LookupBase
     {
         [Key]
-        public int Id { get; set; }
+        [MaxLength(MaxLengthType.Medium)]
+        public string Code { get; set; }
 
+        [Required]
         [MaxLength(MaxLengthType.Medium)]
         public string Name { get; set; }
 
-        [MaxLength(MaxLengthType.Long)]
+        [MaxLength(MaxLengthType.ExtraLong)]
         public string Description { get; set; }
     }
 }

@@ -16,15 +16,20 @@ namespace BrewFree.Data.Models
 
         public virtual Brewer Brewer { get; set; }
 
-        [ForeignKey("BrewType")]
-        public int BrewTypeId { get; set; }
+        [ForeignKey("BrewingMethod")]
+        public string BrewingMethodCode { get; set; }
         
-        public virtual BrewType BrewType { get; set; }
+        public virtual BrewingMethod BrewingMethod { get; set; }
 
         [MaxLength(MaxLengthType.Medium)]
         public string Name { get; set; }
 
         [MaxLength(MaxLengthType.Long)]
         public string Description { get; set; }
+
+        [ForeignKey("Style")]
+        public string StyleCode { get; set; }
+
+        public virtual Style Style { get; set; }
     }
 }
