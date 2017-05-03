@@ -2,13 +2,14 @@
 using BrewFree.Data;
 using BrewFree.Data.Constants;
 using BrewFree.Data.Models.Lookups;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.EntityFrameworkCore;
 
 namespace BrewFree
 {
     public static class ApplicationDbContextConfig
     {
-        public static void Initialize(ApplicationDbContext context)
+        public static void UseApplicationDbContext(this IApplicationBuilder app, ApplicationDbContext context)
         {
             context.Database.Migrate();
             if (!context.StyleTags.Any())

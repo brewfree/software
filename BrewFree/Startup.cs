@@ -8,6 +8,7 @@ using Microsoft.Extensions.Logging;
 using BrewFree.Data;
 using BrewFree.Data.Models;
 using BrewFree.Services;
+using Swashbuckle.AspNetCore.Swagger;
 
 namespace BrewFree
 {
@@ -47,6 +48,12 @@ namespace BrewFree
             services.AddTransient<IEmailSender, AuthMessageSender>();
             services.AddTransient<ISmsSender, AuthMessageSender>();
             services.AddScoped<IBrewerService, BrewerService>();
+
+            // Register the Swagger generator, defining one or more Swagger documents
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new Info { Title = "BrewFree API", Version = "v1" });
+            });
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory, ApplicationDbContext dbContext)
@@ -98,11 +105,19 @@ namespace BrewFree
                 routes.MapRoute("default", "{controller=Home}/{action=Index}/{id?}");
             });
 
-            MapperConfig.Initialize();
+            app.UseSwagger();
+
+            app.UseSwaggerUI(x =>
+            {
+                x.SwaggerEndpoint("/swagger/v1/swagger.json", "BrewFree API V1");
+                x.RoutePrefix = "api/swagger/ui";
+            });
+
+            app.UseAutoMapper();
 
             if (env.IsDevelopment())
             {
-                ApplicationDbContextConfig.Initialize(dbContext);
+                app.UseApplicationDbContext(dbContext);
             }
         }
     }

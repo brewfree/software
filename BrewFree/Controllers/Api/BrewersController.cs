@@ -16,6 +16,7 @@ namespace BrewFree.Controllers.Api
             this.brewerService = brewerService;
         }
 
+        [HttpGet]
         public async Task<IActionResult> Get()
         {
             if (HttpContext.User == null)

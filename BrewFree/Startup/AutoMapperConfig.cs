@@ -1,12 +1,13 @@
 ﻿using AutoMapper;
 using BrewFree.Data.Models;
 using BrewFree.ReadModels;
+using Microsoft.AspNetCore.Builder;
 
 namespace BrewFree
 {
-    public class MapperConfig
+    public static class AutoMapperConfig
     {
-        public static void Initialize()
+        public static void UseAutoMapper(this IApplicationBuilder app)
         {
             Mapper.Initialize(x =>
             {
