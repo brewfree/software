@@ -1,5 +1,4 @@
-﻿using System;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using BrewFree.Data.Constants;
 
@@ -8,8 +7,10 @@ namespace BrewFree.Data.Models
     public class Brewer
     {
         [Key]
-        public Guid Id { get; set; }
+        [MaxLength(MaxLengthType.Key)]
+        public string Id { get; set; }
 
+        [Required]
         [ForeignKey("ApplicationUser")]
         public string ApplicationUserId { get; set; }
 
@@ -17,5 +18,7 @@ namespace BrewFree.Data.Models
 
         [MaxLength(MaxLengthType.Medium)]
         public string Name { get; set; }
+
+        public bool Shared { get; set; }
     }
 }

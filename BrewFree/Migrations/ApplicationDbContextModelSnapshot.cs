@@ -72,13 +72,17 @@ namespace BrewFree.Migrations
 
             modelBuilder.Entity("BrewFree.Data.Models.Brewer", b =>
                 {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd();
+                    b.Property<string>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasMaxLength(36);
 
-                    b.Property<string>("ApplicationUserId");
+                    b.Property<string>("ApplicationUserId")
+                        .IsRequired();
 
                     b.Property<string>("Name")
                         .HasMaxLength(100);
+
+                    b.Property<bool>("Shared");
 
                     b.HasKey("Id");
 
@@ -198,10 +202,11 @@ namespace BrewFree.Migrations
 
             modelBuilder.Entity("BrewFree.Data.Models.Recipe", b =>
                 {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd();
+                    b.Property<string>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasMaxLength(36);
 
-                    b.Property<Guid>("BrewerId");
+                    b.Property<string>("BrewerId");
 
                     b.Property<string>("BrewingMethodCode");
 
@@ -363,7 +368,8 @@ namespace BrewFree.Migrations
                 {
                     b.HasOne("BrewFree.Data.Models.ApplicationUser", "ApplicationUser")
                         .WithMany()
-                        .HasForeignKey("ApplicationUserId");
+                        .HasForeignKey("ApplicationUserId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("BrewFree.Data.Models.Lookups.StyleTagAssociation", b =>
@@ -383,8 +389,7 @@ namespace BrewFree.Migrations
                 {
                     b.HasOne("BrewFree.Data.Models.Brewer", "Brewer")
                         .WithMany()
-                        .HasForeignKey("BrewerId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .HasForeignKey("BrewerId");
 
                     b.HasOne("BrewFree.Data.Models.Lookups.BrewingMethod", "BrewingMethod")
                         .WithMany()

@@ -15,8 +15,11 @@ namespace BrewFree.Data
         #region Lookup
 
         public DbSet<BrewingMethod> BrewingMethods { get; set; }
+
         public DbSet<Style> Styles { get; set; }
+
         public DbSet<StyleTagAssociation> StyleTagAssociations { get; set; }
+
         public DbSet<StyleTag> StyleTags { get; set; }
 
         #endregion Lookup
@@ -24,6 +27,7 @@ namespace BrewFree.Data
         #region User
 
         public DbSet<Brewer> Brewers { get; set; }
+
         public DbSet<Recipe> Recipes { get; set; }
 
         #endregion User

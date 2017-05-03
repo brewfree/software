@@ -23,5 +23,12 @@ namespace BrewFree.Services
 
             return Mapper.Map<IList<BrewerReadModel>>(brewers);
         }
+
+        public async Task<BrewerReadModel> GetAsync(string id)
+        {
+            var brewer = await context.Brewers.FindAsync(id);
+
+            return Mapper.Map<BrewerReadModel>(brewer);
+        }
     }
 }

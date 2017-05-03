@@ -7,7 +7,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using BrewFree.Data;
 using BrewFree.Data.Models;
-using BrewFree.Services;
+using BrewFree.Middleware;
 using Swashbuckle.AspNetCore.Swagger;
 
 namespace BrewFree
@@ -27,6 +27,7 @@ namespace BrewFree
             }
 
             builder.AddEnvironmentVariables();
+
             Configuration = builder.Build();
         }
 
@@ -34,22 +35,20 @@ namespace BrewFree
 
         public void ConfigureServices(IServiceCollection services)
         {
-            // Add framework services.
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
-            services.AddIdentity<ApplicationUser, IdentityRole>()
+            services.AddIdentity<ApplicationUser, IdentityRole>(options =>
+                {
+                    options.Cookies.ApplicationCookie.AutomaticChallenge = false;
+                })
                 .AddEntityFrameworkStores<ApplicationDbContext>()
                 .AddDefaultTokenProviders();
 
             services.AddMvc();
 
-            // Add application services.
-            services.AddTransient<IEmailSender, AuthMessageSender>();
-            services.AddTransient<ISmsSender, AuthMessageSender>();
-            services.AddScoped<IBrewerService, BrewerService>();
+            services.AddServices();
 
-            // Register the Swagger generator, defining one or more Swagger documents
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new Info { Title = "BrewFree API", Version = "v1" });
@@ -60,20 +59,7 @@ namespace BrewFree
         {
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
-
-            if (env.IsDevelopment())
-            {
-                app.UseDeveloperExceptionPage();
-                app.UseDatabaseErrorPage();
-                app.UseBrowserLink();
-            }
-            else
-            {
-                app.UseStatusCodePagesWithReExecute("/Home/Error/{0}");
-            }
-
-            app.UseStaticFiles();
-
+            
             app.UseIdentity();
 
             app.UseFacebookAuthentication(new FacebookOptions
@@ -100,10 +86,25 @@ namespace BrewFree
                 ClientSecret = Configuration["Authentication:Microsoft:ClientSecret"]
             });
 
+            if (env.IsDevelopment())
+            {
+                app.UseDeveloperExceptionPage();
+                app.UseDatabaseErrorPage();
+                app.UseBrowserLink();
+            }
+            else
+            {
+                app.UseStatusCodePagesWithReExecute("/Home/Error/{0}");
+            }
+
+            app.UseMiddleware<WebApiExceptionHandler>();
+
             app.UseMvc(routes =>
             {
                 routes.MapRoute("default", "{controller=Home}/{action=Index}/{id?}");
             });
+
+            app.UseStaticFiles();
 
             app.UseSwagger();
 

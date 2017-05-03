@@ -12,6 +12,7 @@ namespace BrewFree
             Mapper.Initialize(x =>
             {
                 x.CreateMap<Brewer, BrewerReadModel>();
+                x.CreateMap<ApplicationUser, UserReadModel>();
             });
         }
     }

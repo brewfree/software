@@ -6,6 +6,8 @@ namespace BrewFree.Services
 {
     public interface IBrewerService
     {
-        Task<IList<BrewerReadModel>> GetListByApplicationUserAsync(string id);
+        Task<IList<BrewerReadModel>> GetListByApplicationUserAsync(string applicationUserId);
+
+        Task<BrewerReadModel> GetAsync(string id);
     }
 }

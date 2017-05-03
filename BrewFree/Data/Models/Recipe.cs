@@ -1,5 +1,4 @@
-﻿using System;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using BrewFree.Data.Constants;
 using BrewFree.Data.Models.Lookups;
@@ -9,10 +8,11 @@ namespace BrewFree.Data.Models
     public class Recipe
     {
         [Key]
-        public Guid Id { get; set; }
+        [MaxLength(MaxLengthType.Key)]
+        public string Id { get; set; }
 
         [ForeignKey("Brewer")]
-        public Guid BrewerId { get; set; }
+        public string BrewerId { get; set; }
 
         public virtual Brewer Brewer { get; set; }
 

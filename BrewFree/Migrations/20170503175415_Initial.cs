@@ -131,9 +131,10 @@ namespace BrewFree.Migrations
                 schema: "User",
                 columns: table => new
                 {
-                    Id = table.Column<Guid>(nullable: false),
-                    ApplicationUserId = table.Column<string>(nullable: true),
-                    Name = table.Column<string>(maxLength: 100, nullable: true)
+                    Id = table.Column<string>(maxLength: 36, nullable: false),
+                    ApplicationUserId = table.Column<string>(nullable: false),
+                    Name = table.Column<string>(maxLength: 100, nullable: true),
+                    Shared = table.Column<bool>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -144,7 +145,7 @@ namespace BrewFree.Migrations
                         principalSchema: "Security",
                         principalTable: "Users",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -274,8 +275,8 @@ namespace BrewFree.Migrations
                 schema: "User",
                 columns: table => new
                 {
-                    Id = table.Column<Guid>(nullable: false),
-                    BrewerId = table.Column<Guid>(nullable: false),
+                    Id = table.Column<string>(maxLength: 36, nullable: false),
+                    BrewerId = table.Column<string>(nullable: true),
                     BrewingMethodCode = table.Column<string>(nullable: true),
                     Description = table.Column<string>(maxLength: 250, nullable: true),
                     Name = table.Column<string>(maxLength: 100, nullable: true),
@@ -290,7 +291,7 @@ namespace BrewFree.Migrations
                         principalSchema: "User",
                         principalTable: "Brewers",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_Recipes_BrewingMethods_BrewingMethodCode",
                         column: x => x.BrewingMethodCode,

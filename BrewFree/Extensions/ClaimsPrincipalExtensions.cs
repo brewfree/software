@@ -5,7 +5,7 @@ namespace BrewFree.Common
 {
     public static class ClaimsPrincipalExtensions
     {
-        public static string GetNameIdentifierClaim(this ClaimsPrincipal claimsPrincipal)
+        public static string GetApplicationUserId(this ClaimsPrincipal claimsPrincipal)
         {
             var claim = claimsPrincipal.Claims.SingleOrDefault(x => x.Type == ClaimTypes.NameIdentifier);
             return claim?.Value;

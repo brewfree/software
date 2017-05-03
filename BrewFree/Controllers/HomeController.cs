@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BrewFree.Controllers
@@ -12,19 +9,10 @@ namespace BrewFree.Controllers
         {
             return View();
         }
-
-        public IActionResult About()
+        
+        public IActionResult ErrorTest()
         {
-            ViewData["Message"] = "Your application description page.";
-
-            return View();
-        }
-
-        public IActionResult Contact()
-        {
-            ViewData["Message"] = "Your contact page.";
-
-            return View();
+            throw new Exception("Test");
         }
 
         public IActionResult Error()
