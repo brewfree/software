@@ -127,7 +127,8 @@ namespace BrewFree.Migrations
 
                     b.Property<decimal?>("AlcoholByVolumeMinimum");
 
-                    b.Property<string>("Aroma");
+                    b.Property<string>("Aroma")
+                        .HasMaxLength(2500);
 
                     b.Property<decimal?>("ColorMaximum");
 
@@ -136,7 +137,8 @@ namespace BrewFree.Migrations
                     b.Property<string>("Description")
                         .HasMaxLength(2500);
 
-                    b.Property<string>("Examples");
+                    b.Property<string>("Examples")
+                        .HasMaxLength(2500);
 
                     b.Property<decimal?>("FinalGravityMaximum");
 
