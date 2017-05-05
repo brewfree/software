@@ -127,6 +127,8 @@ namespace BrewFree.Migrations
 
                     b.Property<decimal?>("AlcoholByVolumeMinimum");
 
+                    b.Property<string>("Aroma");
+
                     b.Property<decimal?>("ColorMaximum");
 
                     b.Property<decimal?>("ColorMinimum");

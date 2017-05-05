@@ -66,6 +66,7 @@ namespace BrewFree.Migrations
                     Code = table.Column<string>(maxLength: 100, nullable: false),
                     AlcoholByVolumeMaximum = table.Column<decimal>(nullable: true),
                     AlcoholByVolumeMinimum = table.Column<decimal>(nullable: true),
+                    Aroma = table.Column<string>(nullable: true),
                     ColorMaximum = table.Column<decimal>(nullable: true),
                     ColorMinimum = table.Column<decimal>(nullable: true),
                     Description = table.Column<string>(maxLength: 2500, nullable: true),

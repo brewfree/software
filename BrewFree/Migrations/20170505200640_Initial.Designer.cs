@@ -8,7 +8,7 @@ using BrewFree.Data;
 namespace BrewFree.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20170503175415_Initial")]
+    [Migration("20170505200640_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -127,6 +127,8 @@ namespace BrewFree.Migrations
                     b.Property<decimal?>("AlcoholByVolumeMaximum");
 
                     b.Property<decimal?>("AlcoholByVolumeMinimum");
+
+                    b.Property<string>("Aroma");
 
                     b.Property<decimal?>("ColorMaximum");
 

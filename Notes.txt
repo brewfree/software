@@ -1,0 +1,9 @@
+To change the data model
+Delete your database
+Delete the files in the migrations folder
+
+Right click on the BrewFree project and select Open in File Explorer
+Type CMD in the box at the top to open a command window in this location
+Run the following command: dotnet ef migrations add Initial
+To create the database without seeding it: dotnet ef database update
+Run the project if you want the database created and seeded
